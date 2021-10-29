@@ -2,11 +2,10 @@ from pprint import *
 new_file = {}
 def counting_strings (file_name):
     with open(file_name, encoding='utf-8') as file_1:
-        file_1_name = file_name
         counter = 0
         for string in file_1:
             counter += 1
-        new_file[file_1_name] = counter
+        new_file[file_name] = counter
         return new_file
 
 counting_strings('1.txt')
