@@ -1,30 +1,17 @@
 from pprint import *
-
 new_file = {}
+def counting_strings (file_name):
+    with open(file_name, encoding='utf-8') as file_1:
+        file_1_name = file_name
+        counter = 0
+        for string in file_1:
+            counter += 1
+        new_file[file_1_name] = counter
+        return new_file
 
-with open('1.txt', 'r', encoding='utf-8') as file_1:
-  counter = 0
-  file_1_name = '1.txt'
-  for string in file_1:
-    counter += 1
-  new_file[file_1_name] = counter
-print(new_file)
-
-with open('2.txt', encoding='utf-8') as file_2:
-   counter = 0
-   file_2_name = '2.txt'
-   for string in file_2:
-    counter += 1
-   new_file[file_2_name] = counter
-print(new_file)
-
-with open('3.txt', encoding='utf-8') as file_3:
-  counter = 0
-  file_3_name = '3.txt'
-  for string in file_3:
-    counter += 1
-  new_file[file_3_name] = counter
-print(new_file)
+counting_strings('1.txt')
+counting_strings('2.txt')
+counting_strings('3.txt')
 
 sorted_files = list(new_file.items())
 sorted_files.sort( key=lambda i: i[1])
